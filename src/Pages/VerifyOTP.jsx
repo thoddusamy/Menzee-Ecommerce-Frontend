@@ -24,7 +24,7 @@ const VerifyOTP = () => {
     useEffect(() => {
         let checkToken = localStorage.getItem("menzee_authToken")
         if (checkToken) {
-            navigate('/dashboard/tshirts')
+            navigate('/dashboard/tshirts/:tshirts')
         }
     }, [])
 

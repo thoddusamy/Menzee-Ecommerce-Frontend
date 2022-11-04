@@ -21,7 +21,7 @@ const Login = () => {
     useEffect(() => {
         let checkToken = localStorage.getItem("menzee_authToken")
         if (checkToken) {
-            navigate('/dashboard/tshirts')
+            navigate('/dashboard/tshirts/:tshirts')
         }
     }, [])
 
@@ -60,7 +60,7 @@ const Login = () => {
                     isClosable: true,
                 })
                 resetForm({ values: "" })
-                navigate('/dashboard/tshirts')
+                navigate('/dashboard/tshirts/:tshirts')
                 setIsLoading(false)
             } catch (error) {
                 console.log(error.response.data.message);

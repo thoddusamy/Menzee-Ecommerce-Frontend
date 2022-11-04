@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './Pages/Login';
 import Register from './Pages/Register';
@@ -34,9 +33,9 @@ function App() {
             <Route path='/getmail' element={<GetEmail />} />
             <Route path='/forgetpassword/:id/:token' element={<ForgetPassword />} />
             <Route path='/dashboard' element={<Dashboard />}>
-              <Route path='/dashboard/tshirts' element={<Tshirts />} />
-              <Route path='/dashboard/tracks' element={<Tracks />} />
-              <Route path='/dashboard/shorts' element={<Shorts />} />
+              <Route path='/dashboard/tshirts/:tshirts' element={<Tshirts />} />
+              <Route path='/dashboard/tracks/:tracks' element={<Tracks />} />
+              <Route path='/dashboard/shorts/:shorts' element={<Shorts />} />
               <Route path='/dashboard/details/:id' element={<DetailsPage />} />
               <Route path='/dashboard/setpic' element={<SetProfilePic />} />
               <Route path='/dashboard/wishlist' element={<Wishlist />} />

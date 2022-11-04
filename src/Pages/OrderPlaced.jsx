@@ -34,7 +34,7 @@ const OrderPlaced = () => {
             h='85vh'>
             <Text textAlign='center' fontSize='5xl'>Order Placed</Text>
             <Lottie style={{ marginTop: "-80px" }} animationData={OrderPlacedLottie} loop={false}></Lottie>
-            <Button as={Link} to='/dashboard/tshirts'
+            <Button as={Link} to='/dashboard/tshirts/:tshirts'
                 bg='#ff914d'
                 _hover={{ bg: "#ff914d" }}
             >Continue shopping</Button>

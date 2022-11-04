@@ -94,7 +94,7 @@ const SetProfilePic = () => {
                     isClosable: true,
                 })
                 setIsLoading(false)
-                navigate('/dashboard/tshirts')
+                navigate('/dashboard/tshirts/:tshirts')
             } catch (error) {
                 console.log(error);
                 toast({

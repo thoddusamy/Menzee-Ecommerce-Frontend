@@ -16,7 +16,6 @@ const Cart = () => {
     const [totalAmount, setTotalAmount] = useState(0)
     const [itemsPrice, setItemsPrice] = useState(0)
 
-
     const toast = useToast()
     const navigate = useNavigate()
     const context = useContext(ContextApi)
@@ -279,7 +278,7 @@ const Cart = () => {
                 <Button mt={3}
                     bg='#ff914d'
                     _hover={{ bg: '#ff914d' }}
-                    onClick={() => navigate('/dashboard/tshirts')}
+                    onClick={() => navigate('/dashboard/tshirts/:tshirts')}
                 >Shop Now</Button>
             </Box>
         </Box>

@@ -33,15 +33,12 @@ const Dashboard = () => {
 
     const navigate = useNavigate()
     const toast = useToast()
-    const { cart, address, summary, payment, orderplaced, updateaddress } = useParams()
+    const { cart, address, summary, payment, orderplaced, updateaddress, tshirts, tracks, shorts } = useParams()
     const context = useContext(ContextApi)
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()
 
-    const [tshirts, setTshirts] = useState(true)
-    const [tracks, setTracks] = useState(false)
-    const [shorts, setShorts] = useState(false)
     const [userImg, setUserImg] = useState('')
     const [userName, setUserName] = useState('')
 
@@ -70,24 +67,6 @@ const Dashboard = () => {
     useEffect(() => {
         fetchUserData()
     }, [])
-
-    const handleTshirtTab = () => {
-        tshirts === true ? setTshirts(true) : setTshirts(true)
-        setTracks(false)
-        setShorts(false)
-    }
-
-    const handleTracksTab = () => {
-        tracks === true ? setTracks(true) : setTracks(true)
-        setTshirts(false)
-        setShorts(false)
-    }
-
-    const handleShortsTab = () => {
-        shorts === true ? setShorts(true) : setShorts(true)
-        setTshirts(false)
-        setTracks(false)
-    }
 
     const handleLogout = () => {
         localStorage.removeItem("menzee_authToken")
@@ -136,21 +115,21 @@ const Dashboard = () => {
                                 flexDir='column'
                                 w="100%"
                             >
-                                <Button as={Link} to='/dashboard/tshirts'
-                                    w="100%" mt={2} bg={tshirts ? "#ff914d" : ''}
-                                    onClick={handleTshirtTab} _active={{ bg: "#ff914d" }}
+                                <Button as={Link} to='/dashboard/tshirts/:tshirts'
+                                    w="100%" mt={2} bg={tshirts === ":tshirts" ? "#ff914d" : ''}
+                                    _active={{ bg: "#ff914d" }}
                                     _focus={{ bg: "#ff914d" }}>
                                     T-shirts
                                 </Button>
-                                <Button as={Link} to='/dashboard/tracks'
-                                    w="100%" mt={2} bg={tracks ? "#ff914d" : ''}
-                                    onClick={handleTracksTab} _active={{ bg: "#ff914d" }}
+                                <Button as={Link} to='/dashboard/tracks/:tracks'
+                                    w="100%" mt={2} bg={tracks === ":tracks" ? "#ff914d" : ''}
+                                    _active={{ bg: "#ff914d" }}
                                     _focus={{ bg: "#ff914d" }}>
                                     Tracks
                                 </Button>
-                                <Button as={Link} to='/dashboard/shorts'
-                                    w="100%" mt={2} bg={shorts ? "#ff914d" : ''}
-                                    onClick={handleShortsTab} _active={{ bg: "#ff914d" }}
+                                <Button as={Link} to='/dashboard/shorts/:shorts'
+                                    w="100%" mt={2} bg={shorts === ":shorts" ? "#ff914d" : ''}
+                                    _active={{ bg: "#ff914d" }}
                                     _focus={{ bg: "#ff914d" }}>
                                     Shorts
                                 </Button>
@@ -163,7 +142,7 @@ const Dashboard = () => {
                     justifyContent='center'
                     w={'100%'}
                 >
-                    <Image cursor='pointer' onClick={() => navigate('/dashboard/tshirts')}
+                    <Image cursor='pointer' onClick={() => navigate('/dashboard/tshirts/:tshirts')}
                         width='auto' height='50px' src={BrandLogo} />
                 </Box>
                 <Box
@@ -179,11 +158,11 @@ const Dashboard = () => {
                     gap={5}
                     w={'100%'}
                 >
-                    <Button as={Link} to='/dashboard/tshirts'
+                    <Button as={Link} to='/dashboard/tshirts/:tshirts'
                         w={'100%'}
                         h='70px'
                         bg='transparent'
-                        borderBottom={tshirts ? '5px solid #ff914d' : ''}
+                        borderBottom={tshirts === ":tshirts" ? '5px solid #ff914d' : ''}
                         borderRadius={0}
                         fontSize='20px'
                         fontWeight='bold'
@@ -191,12 +170,12 @@ const Dashboard = () => {
                         letterSpacing={5}
                         _hover={{ bg: 'transparent' }}
                         _active={{ bg: 'transparent' }}
-                        onClick={handleTshirtTab}>T-shirts</Button>
-                    <Button as={Link} to='/dashboard/tracks'
+                    >T-shirts</Button>
+                    <Button as={Link} to='/dashboard/tracks/:tracks'
                         w={'100%'}
                         h='70px'
                         bg='transparent'
-                        borderBottom={tracks ? '5px solid #ff914d' : ''}
+                        borderBottom={tracks === ":tracks" ? '5px solid #ff914d' : ''}
                         borderRadius={0}
                         fontSize='20px'
                         fontWeight='bold'
@@ -204,12 +183,12 @@ const Dashboard = () => {
                         letterSpacing={5}
                         _hover={{ bg: 'transparent' }}
                         _active={{ bg: 'transparent' }}
-                        onClick={handleTracksTab}>Tracks</Button>
-                    <Button as={Link} to='/dashboard/shorts'
+                    >Tracks</Button>
+                    <Button as={Link} to='/dashboard/shorts/:shorts'
                         w={'100%'}
                         h='70px'
                         bg='transparent'
-                        borderBottom={shorts ? '5px solid #ff914d' : ''}
+                        borderBottom={shorts === ":shorts" ? '5px solid #ff914d' : ''}
                         borderRadius={0}
                         fontSize='20px'
                         fontWeight='bold'
@@ -217,7 +196,7 @@ const Dashboard = () => {
                         letterSpacing={5}
                         _hover={{ bg: 'transparent' }}
                         _active={{ bg: 'transparent' }}
-                        onClick={handleShortsTab}>Shorts</Button>
+                    >Shorts</Button>
                 </Box>
                 <Box display={'flex'}
                     visibility={address === ":address" ||

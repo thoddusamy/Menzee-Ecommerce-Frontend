@@ -18,11 +18,8 @@ const Payment = () => {
     const [payMode, setPayMode] = useState('')
     const [userAddress, setUserAddress] = useState()
 
-    // console.log(context.cartData);
-
     // --------------- fetch user Address ---------------------
-
-    const fetchUserAddress = async (res, req) => {
+    const fetchUserAddress = async () => {
         try {
             let { data } = await axios.get(`${Api.url}/address`, {
                 headers: {
