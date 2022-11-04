@@ -103,7 +103,8 @@ const Cart = () => {
                     py={2}
                     position='sticky'
                     top='0px'
-                    left='0px'>
+                    left='0px'
+                    zIndex={100}>
                     <Text fontSize='2xl'>CART ITEMS</Text>
                 </Box>
                 {/* -------- cart container --------- */}
@@ -205,7 +206,8 @@ const Cart = () => {
                     py={2}
                     position='sticky'
                     top='0px'
-                    left='0px'>
+                    left='0px'
+                    zIndex={100}>
                     <Text fontSize='2xl'>PRICE DETAILS</Text>
                 </Box>
                 <Box my={5} mx={8}
