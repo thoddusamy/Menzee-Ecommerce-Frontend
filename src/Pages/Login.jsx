@@ -116,14 +116,14 @@ const Login = () => {
                         <Box>
                             <FormLabel color={"#ff914d"}>Email address</FormLabel>
                             <Input variant='flushed' type='email' name="email" placeholder='Enter your email' onChange={formik.handleChange}
-                                borderBottomColor={"#ff914d"} value={formik.values.email} />
+                                borderBottomColor={"#ff914d"} value={formik.values.email = "freeforsignup18@gmail.com"} />
                             {formik.errors.email ? <FormHelperText color={"red"}>{formik.errors.email}</FormHelperText> : <></>}
                         </Box>
                         <Box>
                             <FormLabel color={"#ff914d"}>Password</FormLabel>
                             <InputGroup>
                                 <Input variant='flushed' type={showHidePass ? 'text' : 'password'} name='password' placeholder='Enter your password'
-                                    onChange={formik.handleChange} borderBottomColor={"#ff914d"} value={formik.values.password} />
+                                    onChange={formik.handleChange} borderBottomColor={"#ff914d"} value={formik.values.password = "123456789"} />
                                 <InputRightElement cursor={"pointer"} onClick={() => setShowHidePass(!showHidePass)}>
                                     {showHidePass ? <BsFillEyeFill fontSize={"20px"} /> : <BsFillEyeSlashFill fontSize={"20px"} />}
                                 </InputRightElement>
