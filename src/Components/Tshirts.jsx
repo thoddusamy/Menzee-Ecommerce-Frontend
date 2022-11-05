@@ -114,7 +114,7 @@ const Tshirts = () => {
                             maxW='250px'
                             h='auto'
                             maxH='350px'
-                            bg='#ff914d'
+                            bg='#fcf6f2'
                             boxShadow="rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px"
                             cursor='pointer'
                             key={tees._id}
