@@ -1,3 +1,3 @@
 export const Api = {
-    url: "https://menzee.herokuapp.com"
+    url: "https://menzee.onrender.com"
 }
